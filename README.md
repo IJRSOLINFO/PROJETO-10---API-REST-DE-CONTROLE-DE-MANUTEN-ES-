@@ -32,6 +32,7 @@ PROJETO 10 -  — API REST DE CONTROLE DE MANUTENÇÕES/
 
 Sequência correta para desenvolver (sem escrever código ainda)
 
+
 ### Etapa 1 — Preparar o projeto
 •	Criar a pasta do projeto.
 •	Executar npm init -y.
