@@ -47,14 +47,14 @@ Sequência correta para desenvolver (sem escrever código ainda)
 •	src/modules/manutencoes/routes
 •	src/utils
 
-Etapa 3 — Criar os arquivos vazios
+### bEtapa 3 — Criar os arquivos vazios
 •	database.js
 •	index.js
 •	manutencoes.controller.js
 •	manutencoes.model.js
 •	manutencoes.route.js
 
-Etapa 4 — Banco de dados
+### Etapa 4 — Banco de dados
 Segundo o PDF, a tabela deve se chamar manutencao e possuir os campos:
 Campo	Tipo
 codigo	VARCHAR(20)
@@ -64,10 +64,10 @@ descricao	VARCHAR(255)
 status	VARCHAR(30)
 Isso está definido na atividade. Não precisa criar o SQL agora, apenas planejar.
 
-Etapa 5 — Fluxo MVC (o mais importante para a prova)
+### Etapa 5 — Fluxo MVC (o mais importante para a prova)
 Cliente → Route → Controller → Model → PostgreSQL
 
-Etapa 6 — Ordem para implementar o CRUD
+### Etapa 6 — Ordem para implementar o CRUD
 Implemente nesta ordem:
 •	POST /manutencoes/cadastrar → mais fácil para testar a conexão.
 •	GET /manutencoes/listar → confirma se os dados entram no banco.

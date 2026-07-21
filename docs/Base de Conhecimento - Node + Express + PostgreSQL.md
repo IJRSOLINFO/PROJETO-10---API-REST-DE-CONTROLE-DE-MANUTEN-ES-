@@ -268,7 +268,7 @@ Nunca acessam o banco diretamente.
 
 ### models/
 
-São responsáveis pelas consultas SQL.
+São responsáveis pelas consultas SQL (banco de dados).
 
 INSERT
 
@@ -980,55 +980,3 @@ package.json	                Arquivo que descreve e configura o projeto Node.js
 node_modules	                Pasta onde ficam todas as dependências instaladas
 Git	                          Sistema de controle de versão
 GitHub	                      Plataforma para hospedagem e colaboração em repositórios Git
-
-# 1. Criar projeto
-
-mkdir projeto-api
-cd projeto-api
-
-# 2. Inicializar Node
-
-npm init -y
-
-# 3. Instalar dependências principais
-
-npm install express pg dotenv
-
-# 4. Instalar dependência de desenvolvimento
-
-npm install --save-dev nodemon
-
-# 5. Criar estrutura padrão
-
-src/
-config/
-modules/
-utils/
-
-# 6. Criar .env
-
-PORT=3000
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=meubanco
-DB_USER=postgres
-DB_PASSWORD=senha
-
-# 7. Configurar scripts
-
-npm run dev
-npm start
-
-# 8. Inicializar Git
-
-git init
-Checklist antes de começar a codar
-• Node.js instalado.
-• PostgreSQL instalado e funcionando.
-• Banco criado.
-• Estrutura de pastas criada.
-• .env preenchido.
-• database.js criado.
-• Rotas planejadas.
-• Thunder Client instalado para testes.
-• Git inicializado.
