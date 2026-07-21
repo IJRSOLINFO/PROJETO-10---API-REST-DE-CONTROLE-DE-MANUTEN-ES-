@@ -1,14 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import router from "./modules/manutencoes/routes/manutencoes.route.js";
-import e from "express";
+
 
 dotenv.config();
-const PORTA = process.env.PORTA || 3000;
+const porta = process.env.PORTA || 3000;
 const app = express();
 app.use(express.json());
 app.use(router);
-app.use(express.json());
 
 app.get("/", (requisicao, resposta) => {
   try {
@@ -30,3 +29,7 @@ app.get("/", (requisicao, resposta) => {
       });
   }
 });
+
+app.listen(porta,()=>{
+    console.log("Servidor Executando com Sucesso")
+})

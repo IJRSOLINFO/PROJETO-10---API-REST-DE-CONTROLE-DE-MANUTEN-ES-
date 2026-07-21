@@ -1,4 +1,4 @@
-import FuncionarioModel from "../models/manutencoes.model.js";
+import ManutencaoModel from "../models/manutencoes.model.js";
 
 class ManutencoesController {
   static async cadastrar(requesicao, resposta) {
