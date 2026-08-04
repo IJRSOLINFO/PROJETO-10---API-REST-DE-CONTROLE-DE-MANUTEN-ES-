@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs";
-
 import AdminModel from "../model/admin.model.js";
-import { response } from "express";
+import jwt from "jsonwebtoken";
 
 class AdminController {
   static async cadastrar(requisicao, resposta) {
@@ -33,8 +32,7 @@ class AdminController {
         });
       }
 
-      const regexEmail =
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+      const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
       if (!regexEmail.test(email)) {
         return resposta.status(403).json({
           mensagem: "E-mail Invalido - Por favor forneça um e-mail válido",
@@ -75,12 +73,8 @@ class AdminController {
       if (admin.ativo === false) {
         return resposta.status(403).json({ mensagem: "Administrador inativo" });
       }
-
-      return resposta
-        .status(500)
-        .json({ mensagem: "Erro ao realizar o login" });
-
-      const verificarSenha = bcrypt.compareSync(senha, admin.senha);
+   
+      const verificarSenha = bcrypt.compare(senha, admin.senha);
       if (!verificarSenha) {
         return resposta
           .status(403)
@@ -100,9 +94,8 @@ class AdminController {
         .status(200)
         .json({ mensagem: "Usuário Autentiado com Sucesso!", token });
     } catch (error) {
-      resposta
-        .status(500)
-        .json({ mensagem: "Erro na Autenticação", erro: error.message });
+       return resposta.status(500).json({ mensagem: "Erro ao realizar o login",erro: error.message })
+      
     }
   }
 

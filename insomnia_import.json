@@ -1,0 +1,184 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-08-04T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:2026.1.0",
+  "resources": [
+    {
+      "_id": "wrk_001",
+      "_type": "workspace",
+      "name": "API REST de Controle de Manutencoes",
+      "description": "Importação de rotas para Insomnia"
+    },
+    {
+      "_id": "fld_admin",
+      "_type": "request_group",
+      "name": "Administrador",
+      "parentId": "wrk_001"
+    },
+    {
+      "_id": "req_admin_cadastrar",
+      "_type": "request",
+      "parentId": "fld_admin",
+      "name": "Cadastrar Administrador",
+      "method": "POST",
+      "url": "http://localhost:3000/admin/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Administrador Teste\",\n  \"email\": \"admin@teste.com\",\n  \"senha\": \"Senha@1234\"\n}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_admin_login",
+      "_type": "request",
+      "parentId": "fld_admin",
+      "name": "Login Administrador",
+      "method": "POST",
+      "url": "http://localhost:3000/admin/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@teste.com\",\n  \"senha\": \"Senha@1234\"\n}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_admin_perfil",
+      "_type": "request",
+      "parentId": "fld_admin",
+      "name": "Perfil Administrador",
+      "method": "GET",
+      "url": "http://localhost:3000/admin/perfil/admin@teste.com",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "fld_manutencoes",
+      "_type": "request_group",
+      "name": "Manutencoes",
+      "parentId": "wrk_001"
+    },
+    {
+      "_id": "req_manutencoes_cadastrar",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Cadastrar Manutencao",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"MNT-001\",\n  \"item\": \"Gerador\",\n  \"data_manutencao\": \"2026-08-15\",\n  \"descricao\": \"Troca de óleo e inspeção geral\",\n  \"status\": \"pendente\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_listar",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Listar Todas as Manutencoes",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/listar",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_buscar",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Buscar Manutencao por Codigo",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/buscar/MNT-001",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_atualizar",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Atualizar Manutencao Total",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/atualizar/MNT-001",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"item\": \"Gerador\",\n  \"data_manutencao\": \"2026-08-16\",\n  \"descricao\": \"Troca completa de óleo e filtro\",\n  \"status\": \"concluida\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_atualizar_parcial",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Atualizar Manutencao Parcial",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/atualizar-parcial/MNT-001",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"em andamento\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_deletar",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Deletar Manutencao por Codigo",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/deletar/MNT-001",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "_id": "req_manutencoes_deletar_todos",
+      "_type": "request",
+      "parentId": "fld_manutencoes",
+      "name": "Deletar Todas as Manutencoes",
+      "method": "POST",
+      "url": "http://localhost:3000/manutencoes/deletar-todos",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer <TOKEN>",
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}
