@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import router from "./modules/manutencoes/routes/manutencoes.route.js";
 import routerAdmin from "./modules/administrador/routes/admin.routes.js";
+import criarTabela from "./config/create_tables.js";
 
 
 dotenv.config();
@@ -33,5 +34,6 @@ app.get("/", (requisicao, resposta) => {
 });
 
 app.listen(porta,()=>{
+  criarTabela();
     console.log("Servidor Executando com Sucesso")
 })
